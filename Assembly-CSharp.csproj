@@ -58,16 +58,22 @@
     <Analyzer Include="C:\Program Files\Unity\Hub\Editor\2022.3.4f1\Editor\Data\Tools\Unity.SourceGenerators\Unity.Properties.SourceGenerator.dll" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\scripts\FallSwith.cs" />
     <Compile Include="Assets\scripts\hpController.cs" />
     <Compile Include="Assets\scripts\GameOverScript.cs" />
     <Compile Include="Assets\scripts\Expoder.cs" />
+    <Compile Include="Assets\scripts\Activator.cs" />
     <Compile Include="Assets\scripts\contactDamager.cs" />
     <Compile Include="Assets\scripts\blowTrigger.cs" />
     <Compile Include="Assets\scripts\PlayerControl.cs" />
+    <Compile Include="Assets\scripts\GameControl.cs" />
     <Compile Include="Assets\scripts\JumpController.cs" />
     <Compile Include="Assets\scripts\RamRotator.cs" />
+    <Compile Include="Assets\scripts\WinScript.cs" />
     <Compile Include="Assets\scripts\spikeTrap.cs" />
     <Compile Include="Assets\scripts\bridgeFold.cs" />
+    <Compile Include="Assets\scripts\HpIndicator.cs" />
+    <Compile Include="Assets\scripts\timeCount.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />

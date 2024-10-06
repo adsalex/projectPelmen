@@ -41,23 +41,34 @@ public class spikeTrap : MonoBehaviour
             if (spikesIsOn)
             {
                 rend.material = spikeMat;
+                
             }
             else
             {
                 rend.material = clearMat;
             }
         }
+        if (spikesIsOn) 
+        {
+            foreach (hpController controller in controllers)
+            {
+                controller.Hp--;
+            }
+            controllers.Clear();
+        }
     }
-    //private void OnCollisionEnter(Collision collision)
-    //{
-    //    if (spikesIsOn) { collision.gameObject.GetComponent<hpController>().Hp--; }
-    //}
 
     private void OnCollisionEnter(Collision collision)
     {
         hpController buff = collision.gameObject.GetComponent<hpController>();
         if (buff != null)
             controllers.Add(buff);
+
+    }
+    private void OnCollisionExit(Collision collision)
+    {
+        hpController buff = collision.gameObject.GetComponent<hpController>();
+        controllers.Remove(buff);
 
     }
 }

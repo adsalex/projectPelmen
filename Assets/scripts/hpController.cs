@@ -8,14 +8,18 @@ public class hpController : MonoBehaviour
 {
     
     public UnityEvent eolSignal;
+    public UnityEvent onHpChange;
     [SerializeField]
     int hp=1;
     public int Hp 
     { 
         get{ return hp; }
-        set{ hp = value;Debug.Log(hp);
-        if(hp <= 0) {if(eolSignal != null) eolSignal.Invoke();}
-        }
+        set{ hp = value;
+            if(hp <= 0) 
+            {if(eolSignal != null) eolSignal.Invoke();}
+            if (onHpChange != null) onHpChange.Invoke();
+
+            }
     }
     // Start is called before the first frame update
     void Start()
