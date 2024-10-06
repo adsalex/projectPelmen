@@ -1119,8 +1119,9 @@ GameObject:
   - component: {fileID: 318283231}
   - component: {fileID: 318283230}
   - component: {fileID: 318283229}
+  - component: {fileID: 318283233}
   m_Layer: 0
-  m_Name: platform (19)
+  m_Name: spikeTrap
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1167,7 +1168,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 65a5937e8423a674ea99a6111563d471, type: 2}
+  - {fileID: 2100000, guid: 2fb5f1e238d974142a6a651122c8772f, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -1212,6 +1213,22 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 28
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &318283233
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 318283228}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ffd4af4172ce5244b9b167308e364a80, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  spikesIsOn: 0
+  spikeMat: {fileID: 2100000, guid: bc84d2419d713a94ebda931316ef002d, type: 2}
+  clearMat: {fileID: 2100000, guid: 2fb5f1e238d974142a6a651122c8772f, type: 2}
+  time: 3
 --- !u!1 &329766805
 GameObject:
   m_ObjectHideFlags: 0
@@ -8805,9 +8822,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 572a657dd24ef974e839586be8893604, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  windForce: 7
-  minDirectionSeed: 1
-  maxDirectionSeed: 10
+  windForce: 4
 --- !u!1 &1755025342
 GameObject:
   m_ObjectHideFlags: 0
@@ -10640,8 +10655,8 @@ Rigidbody:
   m_GameObject: {fileID: 2002188187}
   serializedVersion: 4
   m_Mass: 1
-  m_Drag: 0
-  m_AngularDrag: 1
+  m_Drag: 0.05
+  m_AngularDrag: 0.1
   m_CenterOfMass: {x: 0, y: 0, z: 0}
   m_InertiaTensor: {x: 1, y: 1, z: 1}
   m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
@@ -10670,7 +10685,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 14508caf763683b4bbe26207278e6b01, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerMoveSpeed: 5
+  playerMoveSpeed: 20
   playerRotationSpeed: 45
 --- !u!114 &2002188194
 MonoBehaviour:

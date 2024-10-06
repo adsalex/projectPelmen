@@ -7,18 +7,15 @@ public class blowTrigger : MonoBehaviour
 {
     [SerializeField]
     float windForce = 20;
-    [SerializeField]
-    float minDirectionSeed = 1;
-    [SerializeField]
-    float maxDirectionSeed = 10;
+    
     Vector3 direction;
     float timer = 0;
     float timer2 = 0;
     void Start()
     {
-        direction = new Vector3(Random.Range(minDirectionSeed, maxDirectionSeed), 0, Random.Range(minDirectionSeed, maxDirectionSeed));
-        direction = direction.normalized; 
-        //Debug.Log(direction);
+
+        direction = new Vector3( Mathf.Sin(Random.Range(0, 360f)), 0, Mathf.Cos(Random.Range(0, 360f)));
+        //direction = direction.normalized; 
     }
 
     // Update is called once per frame
@@ -27,9 +24,8 @@ public class blowTrigger : MonoBehaviour
         timer += Time.deltaTime;
         if (timer >= 2)
         {
-            direction = new Vector3(Random.Range(minDirectionSeed, maxDirectionSeed), 0, Random.Range(minDirectionSeed, maxDirectionSeed));
-            direction = direction.normalized;
-            //Debug.Log(direction);
+            direction = new Vector3(Mathf.Sin(Random.Range(0, 360f)), 0, Mathf.Cos(Random.Range(0, 360f)));
+            //direction = direction.normalized;
             timer = 0;
         }
 

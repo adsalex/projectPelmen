@@ -13,7 +13,7 @@ public class PlayerControl : MonoBehaviour {
 
     void Start()
     {
-        rb = GetComponent<Rigidbody>();         
+        rb = GetComponent<Rigidbody>();
     }
 
     // Update is called once per frame
@@ -22,22 +22,27 @@ public class PlayerControl : MonoBehaviour {
         movePlayer();
 	}
     
-
     void movePlayer() 
     {
-        transform.Translate(
-            new Vector3
+        
+        Vector3 worldPosition = transform.TransformDirection(new Vector3
             (
-             Input.GetAxis("Horizontal"), 0, Input.GetAxis("Vertical")
-            ) * Time.deltaTime * playerMoveSpeed
+            Input.GetAxis("Horizontal"), 0, Input.GetAxis("Vertical")
+            ) 
             );
-        transform.Rotate
+
+        rb.MovePosition(transform.position+
+            worldPosition * Time.deltaTime * playerMoveSpeed);
+
+       
+
+        rb.transform.Rotate
             (
             new Vector3
             (
              0, Input.GetAxis("Mouse X"), 0
             ) * Time.deltaTime * playerRotationSpeed
-            );/**/
+            );
     }
     
 }

@@ -27,7 +27,6 @@ public class bridgeFold : MonoBehaviour
 
         if (buff>= upperBorder) { direction = -1; }
         transform.Rotate(direction*Time.deltaTime*speed*Vector3.forward);
-        Debug.Log(transform.rotation.eulerAngles.z);
         //Vector3 rotation = transform.rotation.eulerAngles;
         //rotation.y = Mathf.Clamp(rotation.y+speed*Time.deltaTime);
     }
