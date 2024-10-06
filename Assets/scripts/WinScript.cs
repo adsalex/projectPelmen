@@ -29,8 +29,11 @@ public class WinScript : MonoBehaviour
         
         if (collision.gameObject.tag == "Player")
         {
+            float buffer = collision.gameObject.GetComponent<timeCount>().timer;
+            float minutes = Mathf.Floor(buffer / 60);
             finalPan.gameObject.SetActive(true);
-            text.text = afterWord + $"\n твое время: {collision.gameObject.GetComponent<timeCount>().timer} секунд";
+            text.text = afterWord + $"\n твое время: {minutes}мин . {buffer-minutes*60} сек";
+            GameObject.Find("hud").SetActive(false);
             Destroy(collision.gameObject);
         }
 
