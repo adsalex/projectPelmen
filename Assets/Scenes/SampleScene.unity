@@ -7609,6 +7609,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1460639272}
     - target: {fileID: 6078572368900467738, guid: a006ff868eca54d47a1f69941f739663, type: 3}
+      propertyPath: hp
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 6078572368900467738, guid: a006ff868eca54d47a1f69941f739663, type: 3}
       propertyPath: onHpChange.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 786275260}
