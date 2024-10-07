@@ -25,7 +25,7 @@ public class blowTrigger : MonoBehaviour
         if (timer >= 2)
         {
             direction = new Vector3(Mathf.Sin(Random.Range(0, 360f)), 0, Mathf.Cos(Random.Range(0, 360f)));
-            //direction = direction.normalized;
+           
             timer = 0;
         }
 

@@ -30,7 +30,7 @@ public class GameOverScript : MonoBehaviour
         finalPan.gameObject.SetActive(true);
         text.text = afterWord;
         Destroy(this.gameObject);
-        GameObject.Find("hud").SetActive(false);
+        GameObject.Find("hpIndicator").SetActive(false);
 
 
 

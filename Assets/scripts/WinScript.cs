@@ -33,7 +33,7 @@ public class WinScript : MonoBehaviour
             float minutes = Mathf.Floor(buffer / 60);
             finalPan.gameObject.SetActive(true);
             text.text = afterWord + $"\n твое время: {minutes}мин . {buffer-minutes*60} сек";
-            GameObject.Find("hud").SetActive(false);
+            GameObject.Find("hpIndicator").SetActive(false);
             Destroy(collision.gameObject);
         }
 

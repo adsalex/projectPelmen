@@ -19,9 +19,24 @@ public class PlayerControl : MonoBehaviour {
     // Update is called once per frame
     void Update () 
     {
-        movePlayer();
+        rotatePlayer();
 	}
-    
+
+    private void FixedUpdate()
+    {
+        movePlayer();
+    }
+    private void rotatePlayer()
+    {
+        rb.transform.Rotate
+            (
+            new Vector3
+            (
+             0, Input.GetAxis("Mouse X"), 0
+            ) * Time.deltaTime * playerRotationSpeed
+            );
+    }
+
     void movePlayer() 
     {
         
@@ -32,17 +47,9 @@ public class PlayerControl : MonoBehaviour {
             );
 
         rb.MovePosition(transform.position+
-            worldPosition * Time.deltaTime * playerMoveSpeed);
+            worldPosition * Time.fixedDeltaTime * playerMoveSpeed);
 
-       
-
-        rb.transform.Rotate
-            (
-            new Vector3
-            (
-             0, Input.GetAxis("Mouse X"), 0
-            ) * Time.deltaTime * playerRotationSpeed
-            );
+        
     }
     
 }
